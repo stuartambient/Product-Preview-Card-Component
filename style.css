@@ -135,19 +135,27 @@ button:hover {
   main {
     min-height: 80vh;
   }
+  button {
+    height: 2.5rem;
+  }
 
   .container {
     width: 400px;
     height: auto;
     margin: 0.2rem;
     padding: 0;
-    border-radius: 0;
+    border-radius: 10px;
   }
   h1 {
     font-size: 1.6rem;
   }
   .content-wrapper {
     padding: 1rem;
+  }
+
+  .price,
+  .price > p {
+    align-items: center;
   }
 }
 
