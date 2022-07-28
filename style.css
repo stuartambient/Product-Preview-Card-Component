@@ -23,17 +23,16 @@ html {
 
 body {
   background-color: var(--PRIMARY-2);
-
   margin: 0 auto;
   padding: 0;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
-  overflow: hidden;
+  /*  overflow: hidden; */
   min-height: 100vh;
   font-family: 'Montserrat', sans-serif;
 }
 
-main {
+.component {
   display: flex;
   align-items: center;
   justify-items: center;
@@ -41,7 +40,7 @@ main {
   justify-content: center;
 }
 
-.container {
+.component__wrapper {
   overflow: hidden;
   display: flex;
   width: 600px;
@@ -49,14 +48,14 @@ main {
   border-radius: 20px;
 }
 
-img {
+.component__image {
   width: 100%;
   display: block;
   flex: 0 0 50%;
   margin: 0;
 }
 
-.content-wrapper {
+.component__content--wrapper {
   background-color: var(--NEUTRAL-3);
   padding: 1rem;
   margin: 0;
@@ -65,23 +64,23 @@ img {
   justify-content: space-around;
 }
 
-.price {
+.component__prices {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-.price > p {
+.component__prices--original {
   text-decoration: line-through;
   margin-left: 1rem;
 }
 
-h3 {
-  font-family: 'Fraunces', serif;
-  font-weight: 700;
+.component__prices--sale {
+  color: var(--PRIMARY-1);
 }
 
-h1 {
+.component__product,
+.component__prices--sale {
   margin: 0;
   vertical-align: baseline;
   font-family: 'Fraunces', serif;
@@ -98,7 +97,7 @@ input {
   font: inherit;
 }
 
-button {
+.component__purchase {
   background-color: var(--PRIMARY-1);
   color: var(--NEUTRAL-3);
   height: 3rem;
@@ -109,52 +108,44 @@ button {
   border: none;
 }
 
-button:hover {
+.component__purchase:hover {
   filter: brightness(150%);
   cursor: pointer;
 }
 
-.icon {
+.component__icon {
   display: inline-block;
   flex: 0 0 1.2rem;
   height: 1.2rem;
   margin: 0 0.5rem 0 0;
 }
 
-.price > h1 {
-  color: var(--PRIMARY-1);
-}
-
 @media only screen and (max-width: 600px) {
-  /*   main, */
-  .container {
-    flex-direction: column;
-    /* align-items: flex-start; */
-  }
-
-  main {
+  .component {
     min-height: 80vh;
   }
-  button {
+  .component__purchase {
     height: 2.5rem;
   }
 
-  .container {
+  .component__wrapper {
+    flex-direction: column;
     width: 400px;
     height: auto;
     margin: 0.2rem;
     padding: 0;
     border-radius: 10px;
   }
-  h1 {
+  .component__product,
+  .component__prices--sale {
     font-size: 1.6rem;
   }
-  .content-wrapper {
+  .component__content--wrapper {
     padding: 1rem;
   }
 
-  .price,
-  .price > p {
+  .component__prices,
+  .component__prices--original {
     align-items: center;
   }
 }
