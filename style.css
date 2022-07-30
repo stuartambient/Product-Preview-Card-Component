@@ -126,6 +126,10 @@ input {
     height: 2.5rem;
   }
 
+  .component__category {
+    padding: 0.2rem 0 0.5rem 0;
+  }
+
   .component__wrapper {
     flex-direction: column;
     width: 400px;
